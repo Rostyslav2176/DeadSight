@@ -8,6 +8,14 @@ public class PlayerControler : MonoBehaviour
     public float speed;
     private Vector2 move;
 
+    public float dashSpeed;
+
+    public float dashDistance = 0.5f;
+    public float dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolTimer;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -16,6 +24,8 @@ public class PlayerControler : MonoBehaviour
     private void Update()
     {
         movePlayer();
+
+        Dash();
     }
 
     public void movePlayer()
@@ -29,4 +39,32 @@ public class PlayerControler : MonoBehaviour
 
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
+
+public void Dash()
+{
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (dashCoolTimer <= 0 && dashCoolTimer <= 0)
+            {
+                speed = dashSpeed;
+                dashCounter = dashDistance;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                speed = 5f;
+                dashCoolTimer = dashCooldown;
+            }
+        }
+
+        if (dashCoolTimer > 0)
+        {
+            dashCoolTimer -= Time.deltaTime;
+        }
+    }
 }
+
