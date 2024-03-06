@@ -5,16 +5,25 @@ using UnityEngine.Events;
 public class DoorInteraction : MonoBehaviour
 {
     public bool isInRange;
-    public KeyCode interactKey;
-    public UnityEvent interactaction;
+    public GameObject AnimeObject;
+    public GameObject Instruction;
+    public GameObject Trigger;
 
+
+    private void Start()
+    {
+        Instruction.SetActive(false);
+    }
     void Update()
     {
-        if (isInRange)
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(interactKey))
+            if (isInRange == true)
             {
-                interactaction.Invoke();
+                Instruction.SetActive(false);
+                Trigger.SetActive(false);
+                AnimeObject.GetComponent<Animator>().Play("DoorOpen");
+                isInRange = false;
             }
         }
     }
@@ -23,6 +32,7 @@ public class DoorInteraction : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Instruction.SetActive(true);
             isInRange = true;
             Debug.Log("in range");
         }
@@ -32,6 +42,7 @@ public class DoorInteraction : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Instruction.SetActive(false);
             isInRange = false;
             Debug.Log("not in range");
         }
