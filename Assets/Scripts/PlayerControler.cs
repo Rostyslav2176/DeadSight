@@ -16,6 +16,7 @@ public class PlayerControler : MonoBehaviour
     private float dashCounter;
     private float dashCoolTimer;
 
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
