@@ -16,6 +16,8 @@ public class PlayerControler : MonoBehaviour
     private float dashCounter;
     private float dashCoolTimer;
 
+    Vector3 lookPos;
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -25,6 +27,16 @@ public class PlayerControler : MonoBehaviour
     private void Update()
     {
         movePlayer();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            lookPos = hit.point;
+        }
+
+        Vector3 lookDir = lookPos - transform.position;
+        lookDir.y = 0f;
+        transform.LookAt(transform.position + lookDir, Vector3.up);
 
         Dash();
     }
