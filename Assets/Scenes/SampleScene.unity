@@ -2202,7 +2202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 707912293}
   bulletPrefab: {fileID: 3229550013556836674, guid: 4a3eb854ffaca0540afe0236759cc9c7, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 20
 --- !u!1 &735484286
 GameObject:
   m_ObjectHideFlags: 0
