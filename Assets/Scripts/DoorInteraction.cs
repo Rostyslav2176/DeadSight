@@ -8,6 +8,7 @@ public class DoorInteraction : MonoBehaviour
     public GameObject AnimeObject;
     public GameObject Instruction;
     public GameObject Trigger;
+    public AudioSource DoorOpenSound;
 
 
     private void Start()
@@ -24,6 +25,7 @@ public class DoorInteraction : MonoBehaviour
                 Trigger.SetActive(false);
                 AnimeObject.GetComponent<Animator>().Play("DoorOpen");
                 isInRange = false;
+                DoorOpenSound.Play();
             }
         }
     }
