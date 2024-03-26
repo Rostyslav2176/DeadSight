@@ -309,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 30.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22474366
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 25430652}
   - component: {fileID: 25430655}
   - component: {fileID: 25430654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerObj
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1340,7 +1340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000030518, y: -30.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238968721
@@ -1554,8 +1554,8 @@ GameObject:
   - component: {fileID: 273901382}
   - component: {fileID: 273901381}
   - component: {fileID: 273901380}
-  - component: {fileID: 273901379}
   - component: {fileID: 273901378}
+  - component: {fileID: 273901383}
   m_Layer: 0
   m_Name: Agent (3)
   m_TagString: Agent
@@ -1600,23 +1600,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &273901379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273901376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 273901378}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 256
-  walkPointRange: 7
 --- !u!136 &273901380
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1690,6 +1673,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273901376}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &273901383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273901376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 273901378}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 20
+  attackRange: 10
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &291817313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,7 +3493,7 @@ GameObject:
   - component: {fileID: 658835988}
   - component: {fileID: 658835987}
   - component: {fileID: 658835986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3786,7 +3795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707912293}
   - component: {fileID: 707912294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3802,7 +3811,7 @@ Transform:
   m_GameObject: {fileID: 707912292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.002, y: 0, z: 0.7}
+  m_LocalPosition: {x: 0.002, y: 0, z: 0.815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3821,7 +3830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPoint: {fileID: 707912293}
-  bulletPrefab: {fileID: 3229550013556836674, guid: 4a3eb854ffaca0540afe0236759cc9c7, type: 3}
+  bulletPrefab: {fileID: 3442544822480878730, guid: 4a3eb854ffaca0540afe0236759cc9c7, type: 3}
   bulletSpeed: 20
 --- !u!1 &713371394
 GameObject:
@@ -5109,8 +5118,8 @@ GameObject:
   - component: {fileID: 1008871256}
   - component: {fileID: 1008871255}
   - component: {fileID: 1008871254}
-  - component: {fileID: 1008871253}
   - component: {fileID: 1008871252}
+  - component: {fileID: 1008871258}
   m_Layer: 0
   m_Name: Agent (1)
   m_TagString: Agent
@@ -5140,23 +5149,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1008871253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008871251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1008871252}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 128
-  walkPointRange: 7
 --- !u!136 &1008871254
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5239,12 +5231,38 @@ Transform:
   m_GameObject: {fileID: 1008871251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.52, y: 27.729555, z: -42.21}
+  m_LocalPosition: {x: -60.5, y: 27.729555, z: -46.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209172408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008871258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008871251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1008871252}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 15
+  attackRange: 8
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &1034997143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5362,8 +5380,8 @@ GameObject:
   - component: {fileID: 1057287523}
   - component: {fileID: 1057287522}
   - component: {fileID: 1057287521}
-  - component: {fileID: 1057287520}
   - component: {fileID: 1057287519}
+  - component: {fileID: 1057287524}
   m_Layer: 0
   m_Name: Agent (2)
   m_TagString: Agent
@@ -5380,7 +5398,7 @@ Transform:
   m_GameObject: {fileID: 1057287517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.7124, y: 27.729555, z: -51.51}
+  m_LocalPosition: {x: -65.7124, y: 27.729555, z: -50.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5408,23 +5426,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1057287520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057287517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1057287519}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 128
-  walkPointRange: 7
 --- !u!136 &1057287521
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5498,6 +5499,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057287517}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1057287524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057287517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1057287519}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 15
+  attackRange: 8
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &1062844227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6109,8 +6136,8 @@ GameObject:
   - component: {fileID: 1203939612}
   - component: {fileID: 1203939611}
   - component: {fileID: 1203939610}
-  - component: {fileID: 1203939609}
   - component: {fileID: 1203939608}
+  - component: {fileID: 1203939613}
   m_Layer: 0
   m_Name: Agent (4)
   m_TagString: Agent
@@ -6155,23 +6182,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1203939609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203939606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1203939608}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 256
-  walkPointRange: 7
 --- !u!136 &1203939610
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6245,6 +6255,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203939606}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1203939613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203939606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1203939608}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 20
+  attackRange: 10
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &1209172407
 GameObject:
   m_ObjectHideFlags: 0
@@ -10604,8 +10640,8 @@ GameObject:
   - component: {fileID: 2075190011}
   - component: {fileID: 2075190010}
   - component: {fileID: 2075190009}
-  - component: {fileID: 2075190008}
   - component: {fileID: 2075190007}
+  - component: {fileID: 2075190013}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Agent
@@ -10635,23 +10671,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2075190008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075190006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2075190007}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 64
-  walkPointRange: 7
 --- !u!136 &2075190009
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10734,12 +10753,38 @@ Transform:
   m_GameObject: {fileID: 2075190006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.7124, y: 27.729555, z: -68.01449}
+  m_LocalPosition: {x: -65.7124, y: 27.729555, z: -73.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1209172408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2075190013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075190006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2075190007}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 10
+  attackRange: 6
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &2090686770
 GameObject:
   m_ObjectHideFlags: 0
@@ -10857,8 +10902,8 @@ GameObject:
   - component: {fileID: 2103889985}
   - component: {fileID: 2103889984}
   - component: {fileID: 2103889983}
-  - component: {fileID: 2103889982}
   - component: {fileID: 2103889981}
+  - component: {fileID: 2103889986}
   m_Layer: 0
   m_Name: Agent (5)
   m_TagString: Agent
@@ -10875,7 +10920,7 @@ Transform:
   m_GameObject: {fileID: 2103889979}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -65.7124, y: 27.729555, z: -7.78}
+  m_LocalPosition: {x: -68.2, y: 27.729555, z: -14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10903,23 +10948,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2103889982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103889979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28aabafd4ed350947acb50127472f40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2103889981}
-  whatIsGroung:
-    serializedVersion: 2
-    m_Bits: 256
-  walkPointRange: 7
 --- !u!136 &2103889983
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10993,6 +11021,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103889979}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2103889986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103889979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f17007495bd3874f8e18d981a81d8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2103889981}
+  player: {fileID: 25430650}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 7
+  sightRange: 20
+  attackRange: 10
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &2115855457
 GameObject:
   m_ObjectHideFlags: 0
