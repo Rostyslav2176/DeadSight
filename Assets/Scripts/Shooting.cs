@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10;
+    public AudioSource bulletSound;
 
     void Update()
     {
@@ -14,6 +15,7 @@ public class Shooting : MonoBehaviour
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            bulletSound.Play();
         }
     }
 }
