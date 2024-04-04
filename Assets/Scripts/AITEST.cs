@@ -20,6 +20,11 @@ public class AITEST : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    //Shooting
+    public Transform bulletSpawnPoint;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10;
+
     private void Awake()
     {
         player = GameObject.Find("PlayerObj").transform;
@@ -71,9 +76,9 @@ public class AITEST : MonoBehaviour
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-
         transform.LookAt(player);
-        Debug.Log("working");
+        var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
     }
 }
 
