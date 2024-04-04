@@ -20,6 +20,7 @@ public class AITEST : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    [SerializeField] Cooldown cooldown;
     //Shooting
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
@@ -77,8 +78,13 @@ public class AITEST : MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
         transform.LookAt(player);
+        if (cooldown.IsCoolingDown) return;
+
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+
+        cooldown.StartCooldown();
+
     }
 }
 

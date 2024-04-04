@@ -3519,6 +3519,8 @@ MonoBehaviour:
   attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
+  cooldown:
+    cooldownTimer: 1
   bulletSpawnPoint: {fileID: 506766594}
   bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
@@ -6141,7 +6143,7 @@ Transform:
   m_GameObject: {fileID: 506766593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalPosition: {x: 0, y: 0.42, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7814,7 +7816,7 @@ GameObject:
   - component: {fileID: 658835987}
   - component: {fileID: 658835986}
   m_Layer: 10
-  m_Name: Cube
+  m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8824,7 +8826,7 @@ Transform:
   m_GameObject: {fileID: 747454268}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.71}
+  m_LocalPosition: {x: 0, y: 0.46, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10458,7 +10460,7 @@ Transform:
   m_GameObject: {fileID: 922596828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.76}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11439,6 +11441,8 @@ MonoBehaviour:
   attackRange: 8
   playerInSightRange: 0
   playerInAttackRange: 0
+  cooldown:
+    cooldownTimer: 1
   bulletSpawnPoint: {fileID: 747454269}
   bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
@@ -11772,7 +11776,7 @@ Transform:
   m_GameObject: {fileID: 1039696667}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.81}
+  m_LocalPosition: {x: 0, y: 0.47, z: 0.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12145,6 +12149,8 @@ MonoBehaviour:
   attackRange: 8
   playerInSightRange: 0
   playerInAttackRange: 0
+  cooldown:
+    cooldownTimer: 1
   bulletSpawnPoint: {fileID: 1039696668}
   bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
@@ -13029,7 +13035,7 @@ Transform:
   m_GameObject: {fileID: 1121609671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.79}
+  m_LocalPosition: {x: 0, y: 0.44, z: 0.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13805,6 +13811,8 @@ MonoBehaviour:
   attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
+  cooldown:
+    cooldownTimer: 1
   bulletSpawnPoint: {fileID: 922596829}
   bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
@@ -20356,7 +20364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccdd3d6ee3bf6cd4c83bec2b56f8be15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.51
+      value: -18.512
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ccdd3d6ee3bf6cd4c83bec2b56f8be15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23036,7 +23044,7 @@ Transform:
   m_GameObject: {fileID: 2005216292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.796}
+  m_LocalPosition: {x: 0, y: 0.41, z: 0.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24051,8 +24059,10 @@ MonoBehaviour:
   attackRange: 6
   playerInSightRange: 0
   playerInAttackRange: 0
+  cooldown:
+    cooldownTimer: 1
   bulletSpawnPoint: {fileID: 2005216293}
-  bulletPrefab: {fileID: 3442544822480878730, guid: 4a3eb854ffaca0540afe0236759cc9c7, type: 3}
+  bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
 --- !u!1 &2078978903
 GameObject:
@@ -24526,7 +24536,9 @@ MonoBehaviour:
   attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
-  bulletSpawnPoint: {fileID: 1121609672}
+  cooldown:
+    cooldownTimer: 1
+  bulletSpawnPoint: {fileID: 1349538904228686906, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletPrefab: {fileID: 3958303148449693907, guid: 941e54df035fc8344b4a4dfbdf0db944, type: 3}
   bulletSpeed: 10
 --- !u!1 &2104098484
