@@ -81,7 +81,7 @@ public class AITEST : MonoBehaviour
         if (cooldown.IsCoolingDown) return;
 
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+        bullet.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
 
         cooldown.StartCooldown();
 
